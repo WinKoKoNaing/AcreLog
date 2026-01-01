@@ -1,0 +1,70 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+
+model Farmer {
+  id          String      @id @default(uuid())
+  name        String
+  phone       String?
+  village     String?
+  totalAcres  Float?
+  isActive    Boolean     @default(true)
+
+  acreRecords AcreRecord[]
+
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+}
+
+model Tractor {
+  id        String      @id @default(uuid())
+  name      String
+  status    TractorStatus @default(AVAILABLE)
+
+  acreRecords AcreRecord[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model AcreRecord {
+  id          String   @id @default(uuid())
+  date        DateTime
+  workType    WorkType
+  acres       Float
+  ratePerAcre Float?
+  totalAmount Float?
+
+  farmerId    String
+  tractorId   String
+
+  farmer      Farmer  @relation(fields: [farmerId], references: [id])
+  tractor     Tractor @relation(fields: [tractorId], references: [id])
+
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+enum TractorStatus {
+  AVAILABLE
+  MAINTENANCE
+}
+
+enum WorkType {
+  PLOWING
+  SEEDING
+  HARVESTING
+  TRANSPORT
+}

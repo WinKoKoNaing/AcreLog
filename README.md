@@ -1,18 +1,186 @@
-# Turborepo starter
+# 📅 AcreLog – Development Timeline
 
-This is a community-maintained example. If you experience a problem, please submit a pull request with a fix. GitHub Issues will be closed.
+> Goal: Build a production-ready web + mobile system to track farmer acreage work (acres),
+> tractors, and payments using NestJS, Next.js, Expo, and Prisma.
 
-## Using this example
+---
 
-Run the following command:
+## 🧱 Phase 0 – Project Foundation
 
-```bash
-npx create-turbo@latest -e with-nestjs
-```
+- [x] Decide project name (**AcreLog**)
+- [x] Setup monorepo structure (`apps/`, `packages/`)
+- [x] Configure PNPM workspaces
+- [x] Setup shared configs (`eslint`, `prettier`, `tsconfig`)
+- [x] Setup Prisma & database connection
+- [x] Initial Prisma migration
 
-## What's inside?
+---
 
-This Turborepo includes the following packages & apps:
+## 🗄️ Phase 1 – Core Data Models (Backend)
+
+### Prisma Schema
+
+- [x] Farmer model
+- [x] Tractor model
+- [x] AcreRecord model
+- [x] Enums (WorkType, TractorStatus)
+- [x] Relationships & indexes
+
+### Prisma Infrastructure
+
+- [x] Create `PrismaService`
+- [x] Create `PrismaModule`
+- [x] Register Prisma globally
+
+---
+
+## 🧩 Phase 2 – Backend Domain Modules (NestJS)
+
+### Farmer Module
+
+- [x] Create Farmer module
+- [x] Farmer service (create, list, get)
+- [x] Farmer controller (REST endpoints)
+
+### Tractor Module
+
+- [ ] Create Tractor module
+- [ ] Tractor service
+- [ ] Tractor controller
+- [ ] Tractor availability status
+
+### Acre Record Module
+
+- [x] Create AcreRecord module
+- [x] Business logic (total amount calculation)
+- [ ] Query records by farmer
+- [ ] Query records by date range
+
+---
+
+## 📦 Phase 3 – Shared API Contracts (`@repo/api`)
+
+- [x] Farmer DTOs
+- [x] AcreRecord DTOs
+- [ ] Tractor DTOs
+- [ ] API response types
+- [ ] Pagination types
+
+---
+
+## 🛡️ Phase 4 – Validation & Error Handling
+
+- [ ] Install `class-validator` & `class-transformer`
+- [ ] Create CreateFarmerDto
+- [ ] Create CreateAcreRecordDto
+- [ ] Global validation pipe
+- [ ] Consistent API error format
+
+---
+
+## 🔐 Phase 5 – Authentication & Authorization
+
+- [ ] Decide auth strategy (JWT)
+- [ ] User model (Admin / Operator)
+- [ ] Login endpoint
+- [ ] Protect write APIs
+- [ ] Role-based access control
+
+---
+
+## 🌐 Phase 6 – Web App (Next.js)
+
+### Setup
+
+- [ ] Initialize Next.js app
+- [ ] API client setup
+- [ ] Shared types from `@repo/api`
+
+### Features
+
+- [ ] Farmer list page
+- [ ] Farmer create/edit form
+- [ ] Acre record entry form
+- [ ] Tractor management page
+- [ ] Reports (daily / monthly acres)
+
+---
+
+## 📱 Phase 7 – Mobile App (Expo / React Native)
+
+### Setup
+
+- [ ] Initialize Expo app
+- [ ] Configure monorepo imports
+- [ ] API client integration
+
+### Features
+
+- [ ] Farmer list (offline-first)
+- [ ] Add acre record
+- [ ] Tractor selector
+- [ ] Local cache (SQLite/MMKV)
+- [ ] Sync logic (online/offline)
+
+---
+
+## 🔄 Phase 8 – Offline & Sync Strategy
+
+- [ ] Add `clientId` fields
+- [ ] Add `lastSyncedAt`
+- [ ] Conflict resolution rules
+- [ ] Retry queue for failed requests
+- [ ] Sync status UI
+
+---
+
+## 📊 Phase 9 – Reports & Insights
+
+- [ ] Total acres per farmer
+- [ ] Income per farmer
+- [ ] Tractor utilization
+- [ ] Date range filters
+- [ ] Export (CSV/PDF)
+
+---
+
+## 🧪 Phase 10 – Testing
+
+- [ ] Unit tests (services)
+- [ ] API integration tests
+- [ ] Validation tests
+- [ ] Sync edge cases
+
+---
+
+## 🚀 Phase 11 – Production Readiness
+
+- [ ] Environment configs
+- [ ] Logging
+- [ ] API rate limiting
+- [ ] Docker setup
+- [ ] CI pipeline
+- [ ] Production DB migration
+
+---
+
+## 📦 Phase 12 – Polish & Future
+
+- [ ] Multi-language support
+- [ ] Dark mode (web + mobile)
+- [ ] Notifications
+- [ ] Multi-tractor ownership
+- [ ] Subscription / billing (optional)
+
+---
+
+## ✅ Definition of Done
+
+- [ ] Backend stable & tested
+- [ ] Web app usable by admin
+- [ ] Mobile app usable offline
+- [ ] Data accurate & synced
+- [ ] Ready for real farmers 🚜🌾
 
 ### Apps and Packages
 
@@ -109,16 +277,3 @@ Next, you can link your Turborepo to your Remote Cache by running the following 
 ```bash
 npx turbo link
 ```
-
-## Useful Links
-
-This example take some inspiration the [with-nextjs](https://github.com/vercel/turborepo/tree/main/examples/with-nextjs) `Turbo` example and [01-cats-app](https://github.com/nestjs/nest/tree/master/sample/01-cats-app) `NestJs` sample.
-
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turborepo.com/docs/crafting-your-repository/running-tasks)
-- [Caching](https://turborepo.com/docs/crafting-your-repository/caching)
-- [Remote Caching](https://turborepo.com/docs/core-concepts/remote-caching)
-- [Filtering](https://turborepo.com/docs/crafting-your-repository/running-tasks#using-filters)
-- [Configuration Options](https://turborepo.com/docs/reference/configuration)
-- [CLI Usage](https://turborepo.com/docs/reference/command-line-reference)

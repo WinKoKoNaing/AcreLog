@@ -182,6 +182,13 @@
 - [ ] Data accurate & synced
 - [ ] Ready for real farmers 🚜🌾
 
+### My Note
+
+```shell
+pnpm add @nestjs/swagger --filter api
+```
+
+
 ### Apps and Packages
 
 ```shell

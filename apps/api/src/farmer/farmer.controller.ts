@@ -1,16 +1,27 @@
 import { Body, Controller, Get, Param, Post } from '@nestjs/common';
 import { FarmerService } from './farmer.service';
-import { CreateFarmerDto } from '@repo/api';
+import { CreateFarmerDto } from './dto/create-farmer.dto';
+import { Farmer } from './entities/farmer.entity';
+import {
+  ApiBearerAuth,
+  ApiOperation,
+  ApiResponse,
+  ApiTags,
+} from '@nestjs/swagger';
 
+@ApiBearerAuth()
+@ApiTags('farmers')
 @Controller('farmers')
 export class FarmerController {
   constructor(private readonly farmerService: FarmerService) {}
 
   @Post()
+  @ApiOperation({ summary: 'Create farmer' })
+  @ApiResponse({ status: 403, description: 'Forbidden..' })
   create(
     @Body()
     body: CreateFarmerDto,
-  ) {
+  ): Promise<Farmer> {
     return this.farmerService.create(body);
   }
 

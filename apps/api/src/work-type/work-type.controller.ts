@@ -11,7 +11,7 @@ import { WorkTypeService } from './work-type.service';
 import { CreateWorkTypeDto } from './dto/create-work-type.dto';
 import { UpdateWorkTypeDto } from './dto/update-work-type.dto';
 
-@Controller('work-type')
+@Controller('work-types')
 export class WorkTypeController {
   constructor(private readonly workTypeService: WorkTypeService) {}
 

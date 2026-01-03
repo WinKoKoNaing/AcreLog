@@ -8,10 +8,6 @@
     "outDir": "dist",
     "types": ["node"]
   },
-  "include": [
-    "src",
-    "../../apps/api/src/farmer/dto",
-    "../../apps/api/src/farmer/entities"
-  ],
+  // "include": ["src"],
   "exclude": ["node_modules", "test", "dist", "**/*spec.ts"]
 }

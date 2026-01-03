@@ -1,7 +1,8 @@
 import { Injectable } from '@nestjs/common';
 
-import { Link, CreateLinkDto, UpdateLinkDto } from '@repo/api';
-
+import { CreateLinkDto } from './dto/create-link.dto';
+import { Link } from './entities/link.entity';
+import { UpdateLinkDto } from './dto/update-link.dto';
 @Injectable()
 export class LinksService {
   private readonly _links: Link[] = [
@@ -39,7 +40,7 @@ export class LinksService {
   }
 
   update(id: number, updateLinkDto: UpdateLinkDto) {
-    return `TODO: This action should update a #${id} link ${updateLinkDto.title}`;
+    return `TODO: This action should update a #${id} link ${updateLinkDto}`;
   }
 
   remove(id: number) {

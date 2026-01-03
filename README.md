@@ -44,9 +44,9 @@
 
 ### Tractor Module
 
-- [ ] Create Tractor module
-- [ ] Tractor service
-- [ ] Tractor controller
+- [x] Create Tractor module
+- [x] Tractor service
+- [x] Tractor controller
 - [ ] Tractor availability status
 
 ### Acre Record Module
@@ -62,7 +62,7 @@
 
 - [x] Farmer DTOs
 - [x] AcreRecord DTOs
-- [ ] Tractor DTOs
+- [x] Tractor DTOs
 - [ ] API response types
 - [ ] Pagination types
 
@@ -70,9 +70,9 @@
 
 ## 🛡️ Phase 4 – Validation & Error Handling
 
-- [ ] Install `class-validator` & `class-transformer`
-- [ ] Create CreateFarmerDto
-- [ ] Create CreateAcreRecordDto
+- [x] Install `class-validator` & `class-transformer`
+- [x] Create CreateFarmerDto
+- [x] Create CreateAcreRecordDto
 - [ ] Global validation pipe
 - [ ] Consistent API error format
 
@@ -92,7 +92,7 @@
 
 ### Setup
 
-- [ ] Initialize Next.js app
+- [x] Initialize Next.js app
 - [ ] API client setup
 - [ ] Shared types from `@repo/api`
 

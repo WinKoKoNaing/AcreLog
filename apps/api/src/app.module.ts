@@ -9,6 +9,7 @@ import { LinksModule } from './links/links.module';
 import { WorkTypeModule } from './work-type/work-type.module';
 import { TractorModule } from './tractor/tractor.module';
 import { PrismaModule } from './prisma/prisma.module';
+import { AcreRecordModule } from './acre-record/acre-record.module';
 
 @Module({
   imports: [
@@ -18,6 +19,7 @@ import { PrismaModule } from './prisma/prisma.module';
     FarmerModule,
     WorkTypeModule,
     TractorModule,
+    AcreRecordModule,
   ],
   controllers: [AppController],
   providers: [AppService],

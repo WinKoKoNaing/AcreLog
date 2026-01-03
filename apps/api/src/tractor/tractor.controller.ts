@@ -11,7 +11,7 @@ import { TractorService } from './tractor.service';
 import { CreateTractorDto } from './dto/create-tractor.dto';
 import { UpdateTractorDto } from './dto/update-tractor.dto';
 
-@Controller('tractor')
+@Controller('tractors')
 export class TractorController {
   constructor(private readonly tractorService: TractorService) {}
 

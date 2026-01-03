@@ -186,8 +186,10 @@
 
 ```shell
 pnpm add @nestjs/swagger --filter api
+pnpm --filter api exec nest g resource tractor 
+pnpm --filter api exec prisma migrate generate
+pnpm --filter api exec prisma migrate dev -n worktype-model
 ```
-
 
 ### Apps and Packages
 

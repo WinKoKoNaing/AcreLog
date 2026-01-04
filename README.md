@@ -23,7 +23,7 @@
 - [x] Farmer model
 - [x] Tractor model
 - [x] AcreRecord model
-- [x] Enums (WorkType, TractorStatus)
+- [x] Enums (TractorStatus)
 - [x] Relationships & indexes
 
 ### Prisma Infrastructure
@@ -49,6 +49,12 @@
 - [x] Tractor controller
 - [ ] Tractor availability status
 
+### WorkType Module
+
+- [x] Create WorkType module
+- [x] WorkType service
+- [x] WorkType controller
+
 ### Acre Record Module
 
 - [x] Create AcreRecord module
@@ -63,7 +69,7 @@
 - [x] Farmer DTOs
 - [x] AcreRecord DTOs
 - [x] Tractor DTOs
-- [ ] API response types
+- [x] API response types
 - [ ] Pagination types
 
 ---
@@ -73,18 +79,18 @@
 - [x] Install `class-validator` & `class-transformer`
 - [x] Create CreateFarmerDto
 - [x] Create CreateAcreRecordDto
-- [ ] Global validation pipe
-- [ ] Consistent API error format
+- [x] Global validation pipe
+- [x] Consistent API error format
 
 ---
 
 ## 🔐 Phase 5 – Authentication & Authorization
 
-- [ ] Decide auth strategy (JWT)
-- [ ] User model (Admin / Operator)
-- [ ] Login endpoint
+- [x] Decide auth strategy (JWT)
+- [x] User model (Admin / Operator)
+- [x] Login endpoint
 - [ ] Protect write APIs
-- [ ] Role-based access control
+- [x] Role-based access control
 
 ---
 
@@ -182,13 +188,25 @@
 - [ ] Data accurate & synced
 - [ ] Ready for real farmers 🚜🌾
 
-### My Note
+### My Notes
 
 ```shell
 pnpm add @nestjs/swagger --filter api
-pnpm --filter api exec nest g resource tractor 
+pnpm --filter api exec nest g resource tractor
 pnpm --filter api exec prisma migrate generate
 pnpm --filter api exec prisma migrate dev -n worktype-model
+```
+
+```shell
+Request
+ → Middleware
+ → Guard
+ → Pipe
+ → Interceptor (before)
+ → Controller
+ → Interceptor (after)
+ → Exception Filter (if error)
+ → Response
 ```
 
 ### Apps and Packages

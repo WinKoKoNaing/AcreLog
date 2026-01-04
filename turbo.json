@@ -5,7 +5,7 @@
     "dev": {
       "cache": false,
       "persistent": true,
-      "env": ["DATABASE_URL"]
+      "env": ["DATABASE_URL", "JWT_SECRET"]
     },
     "build": {
       "dependsOn": ["^build"],

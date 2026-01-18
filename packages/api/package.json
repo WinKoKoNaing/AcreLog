@@ -4,27 +4,14 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "dev": "pnpm build --watch",
-    "build": "tsc -b -v",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\""
   },
-  "main": "./dist/entry.js",
-  "types": "./dist/entry.d.ts",
   "files": [
     "./dist/**"
   ],
-  "publishConfig": {
-    "access": "public"
-  },
+  "main": "./src/index.js",
   "exports": {
-    ".": {
-      "import": "./dist/entry.js",
-      "require": "./dist/entry.js"
-    },
-    "./*": {
-      "import": "./dist/*.js",
-      "require": "./dist/*.js"
-    }
+    ".": "./src/index.ts"
   },
   "dependencies": {
     "@nestjs/mapped-types": "*"

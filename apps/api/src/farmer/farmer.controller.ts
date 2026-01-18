@@ -27,7 +27,7 @@ export class FarmerController {
 
   @Get()
   findAll() {
-    return process.env.JWT_SECRET;
+    return this.farmerService.findAll();
   }
 
   @Get(':id')
